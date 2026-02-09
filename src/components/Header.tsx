@@ -36,12 +36,12 @@ const Header = () => {
               alt="NDT Training Institute"
               className="h-10 lg:h-12 w-auto"
             />
-            <div className="hidden sm:block">
-              <span className="font-display font-bold text-primary text-lg">
+            <div className="">
+              <span className="font-display font-bold text-primary text-sm md:text-lg">
                 Api cswip bgas ndt service
               </span>
               <span className="block text-xs text-muted-foreground -mt-1">
-                Institute
+                Education
               </span>
             </div>
           </Link>

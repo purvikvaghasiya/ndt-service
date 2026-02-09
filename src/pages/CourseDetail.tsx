@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Layout from "@/components/Layout";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getSubProductById, courses } from "@/data/courses";
@@ -10,6 +10,9 @@ import {
   Share2,
   Star,
   IndianRupee,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 const ProductDetail = () => {
@@ -22,6 +25,8 @@ const ProductDetail = () => {
 
   const product = getSubProductById(id || "");
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Find Main Product (Category/Title) from subProduct id
   const parentProduct = useMemo(() => {
@@ -30,6 +35,61 @@ const ProductDetail = () => {
       main.subProducts.some((sub) => sub.id === id),
     );
   }, [id]);
+
+  // Handle keyboard navigation in lightbox
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isLightboxOpen) return;
+
+      if (e.key === "Escape") {
+        setIsLightboxOpen(false);
+      } else if (e.key === "ArrowLeft") {
+        handlePrevImage();
+      } else if (e.key === "ArrowRight") {
+        handleNextImage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isLightboxOpen, lightboxIndex, product]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (isLightboxOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isLightboxOpen]);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
+  const handleNextImage = () => {
+    if (product?.images) {
+      setLightboxIndex((prev) =>
+        prev === product.images.length - 1 ? 0 : prev + 1,
+      );
+    }
+  };
+
+  const handlePrevImage = () => {
+    if (product?.images) {
+      setLightboxIndex((prev) =>
+        prev === 0 ? product.images.length - 1 : prev - 1,
+      );
+    }
+  };
 
   console.log("parentProduct: ", parentProduct);
   console.log("product: ", product);
@@ -71,13 +131,21 @@ const ProductDetail = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Left Side - Images */}
             <div className="space-y-4">
-              {/* Main Image */}
-              <div className="relative aspect-square overflow-hidden rounded-lg bg-muted border">
+              {/* Main Image - Clickable */}
+              <div
+                className="relative aspect-square overflow-hidden rounded-lg bg-muted border cursor-pointer group"
+                onClick={() => openLightbox(selectedImage)}
+              >
                 <img
                   src={product.images?.[selectedImage]}
                   alt={`${product.title} - Image ${selectedImage + 1}`}
-                  className="w-full h-full object-cover transition-all duration-300"
+                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">
+                    Click to enlarge
+                  </span>
+                </div>
               </div>
 
               {/* Thumbnail Gallery */}
@@ -174,7 +242,7 @@ const ProductDetail = () => {
               {/* Includes */}
               <div className="space-y-3">
                 <h3 className="font-display text-lg text-foreground">
-                  What’s Included
+                  What's Included
                 </h3>
 
                 <ul className="space-y-2">
@@ -210,6 +278,96 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Full-Screen Lightbox */}
+      {isLightboxOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          {/* Close Button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            aria-label="Close lightbox"
+          >
+            <X size={24} />
+          </button>
+
+          {/* Image Counter */}
+          {product.images && product.images.length > 1 && (
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 px-4 py-2 rounded-full bg-white/10 text-white text-sm">
+              {lightboxIndex + 1} / {product.images.length}
+            </div>
+          )}
+
+          {/* Previous Button */}
+          {product.images && product.images.length > 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrevImage();
+              }}
+              className="absolute left-4 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={32} />
+            </button>
+          )}
+
+          {/* Main Image */}
+          <div
+            className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center px-16"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={product.images?.[lightboxIndex]}
+              alt={`${product.title} - Image ${lightboxIndex + 1}`}
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+
+          {/* Next Button */}
+          {product.images && product.images.length > 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNextImage();
+              }}
+              className="absolute right-4 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              aria-label="Next image"
+            >
+              <ChevronRight size={32} />
+            </button>
+          )}
+
+          {/* Thumbnail Strip (for multiple images) */}
+          {product.images && product.images.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2 overflow-x-auto max-w-[90vw] px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm">
+              {product.images.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLightboxIndex(index);
+                  }}
+                  className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                    lightboxIndex === index
+                      ? "border-white ring-2 ring-white/50"
+                      : "border-white/30 hover:border-white/60"
+                  }`}
+                >
+                  <img
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </Layout>
   );
 };

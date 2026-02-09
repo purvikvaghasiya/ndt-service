@@ -48,10 +48,11 @@ const Footer = () => {
             <h4 className="font-display font-bold text-lg mb-4">Our Courses</h4>
             <ul className="space-y-2">
               {[
-                "Ultrasonic Testing",
-                "Radiographic Testing",
-                "Magnetic Particle",
-                "Penetrant Testing",
+                "API Material",
+                "CSWIP & BGAS Material",
+                "ASNT level III Material",
+                "ARAMCO CBT Material",
+                "QA/QC Material",
               ].map((course) => (
                 <li key={course}>
                   <span className="text-primary-foreground/80 text-sm">
@@ -72,7 +73,7 @@ const Footer = () => {
                   className="text-accent mt-0.5 flex-shrink-0"
                 />
                 <span className="text-primary-foreground/80 text-sm">
-                  507, HRK Arcade ,Near Shiv Plaza, Surat, Gujarat 394130, India
+                  Surat, Gujarat, India
                 </span>
               </li>
               <li className="flex items-center gap-3">

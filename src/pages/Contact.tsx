@@ -26,7 +26,7 @@ const Contact = () => {
       {/* Contact Content */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1">
             {/* Contact Info */}
             <div>
               <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
@@ -43,11 +43,11 @@ const Contact = () => {
                       Our Address
                     </h3>
                     <p className="text-muted-foreground">
-                      507, HRK Arcade ,Near Shiv Plaza,
-                      <br />
-                      Surat, Gujarat 394130
-                      <br />
-                      India
+                      {/* 507, HRK Arcade ,Near Shiv Plaza,
+                      <br /> */}
+                      Surat, Gujarat India
+                      {/* <br />
+                      India */}
                     </p>
                   </div>
                 </div>
@@ -109,9 +109,7 @@ const Contact = () => {
                       Working Hours
                     </h3>
                     <p className="text-muted-foreground">
-                      Monday - Saturday: 9:00 AM - 6:00 PM
-                      <br />
-                      Sunday: Closed
+                      Monday - Sunday 24 x 7
                     </p>
                   </div>
                 </div>
@@ -126,12 +124,11 @@ const Contact = () => {
             </div>
 
             {/* Map */}
-            <div>
+            {/* <div>
               <h2 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
                 Find Us on Map
               </h2>
               <div className="bg-card rounded-xl overflow-hidden shadow-card h-[400px] lg:h-full min-h-[400px]">
-                {/* Google Maps Embed Placeholder */}
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3717.4613713271556!2d72.89394227472151!3d21.292778378659172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0490055769979%3A0x767a15122982bbf8!2sHRK%20Arcade!5e0!3m2!1sen!2sin!4v1770057256222!5m2!1sen!2sin"
                   width="100%"
@@ -144,13 +141,13 @@ const Contact = () => {
                   className="w-full h-full"
                 ></iframe>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
       {/* Enquiry Form Section */}
-      <section className="py-16 lg:py-24 bg-muted">
+      {/* <section className="py-16 lg:py-24 bg-muted">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-10">
@@ -255,7 +252,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 };

@@ -14,7 +14,7 @@ const WhatsAppButton = ({
   const phoneNumber = "919428194318"; // Replace with actual number
   const message = courseName
     ? `Hello! I am interested in the ${courseName} course. Please share details.`
-    : "Hello! I am interested in your NDT training courses. Please share details.";
+    : "Hello! I am interested in your courses. Please share details.";
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
