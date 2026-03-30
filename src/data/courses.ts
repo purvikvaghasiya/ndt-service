@@ -530,7 +530,7 @@ export const courses: MainProduct[] = [
         review: 12970,
         rating: 4.8,
         price: "999",
-        guarantee: "99% Passing Guarantee Material",
+        guarantee: "85% Passing Guarantee Material",
         description:
           "CSWIP 3.2 is an advanced certification focused on supervising welding inspection activities, quality management, and technical decision-making. This study material prepares inspectors to manage inspection teams, interpret standards, and control welding quality at a senior level.",
         covers: [
