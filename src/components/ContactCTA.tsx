@@ -11,7 +11,7 @@ const ContactCTA = () => {
           </h2>
           <p className="text-primary-foreground/80 mb-8 text-lg">
             Get access to exam-focused study material designed for real
-            industrial concepts. Achieve certification faster with 85% passing
+            industrial concepts. Achieve certification faster with 99% passing
             support and expert guidance.
           </p>
 

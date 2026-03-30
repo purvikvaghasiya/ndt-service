@@ -35,9 +35,20 @@ const ProductCard = ({ product, category }: ProductCardProps) => {
           {product.description}
         </p>
 
-        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-          <IndianRupee size={16} className="text-accent" />
-          <span className="font-semibold text-foreground">{product.price}</span>
+        <div className="flex items-center gap-2 flex-wrap mb-4">
+          <div className="flex items-center gap-1">
+            <IndianRupee size={16} className="text-accent" />
+            <span className="font-semibold text-foreground">{product.price}</span>
+          </div>
+          <div className="flex items-center gap-1 text-muted-foreground">
+            <IndianRupee size={13} />
+            <span className="text-sm line-through">
+              {Math.round(Number(product.price) * 1.2)}
+            </span>
+          </div>
+          <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-0.5 rounded-full">
+            20% OFF
+          </span>
         </div>
 
         <Link

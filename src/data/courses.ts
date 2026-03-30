@@ -5,7 +5,7 @@ export interface SubProduct {
   review: number;
   rating: number;
   price: string;
-  guarantee?: string; // e.g. "85% Passing Guarantee Material"
+  guarantee?: string; // e.g. "99% Passing Guarantee Material"
   description: string; // Main overview paragraph
   coversTitle?: string; // Section label (defaults to "What This Study Material Covers")
   covers?: string[]; // Bullet points
@@ -36,7 +36,7 @@ export const courses: MainProduct[] = [
         review: 13840,
         rating: 4.5,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ASNT NDT Level III (Basic + MT) focuses on advanced magnetic particle testing along with Level III core responsibilities such as procedure development, technique selection, and quality control. This study material prepares professionals to manage MT inspections, interpret results, and ensure compliance with international NDT standards.",
         covers: [
@@ -66,7 +66,7 @@ export const courses: MainProduct[] = [
         review: 12690,
         rating: 4,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ASNT NDT Level III (Basic + UT) specializes in advanced ultrasonic testing along with Level III technical management concepts. This study material trains professionals to design UT procedures, analyze complex indications, and ensure high inspection reliability in critical equipment.",
         covers: [
@@ -96,7 +96,7 @@ export const courses: MainProduct[] = [
         review: 14950,
         rating: 3.9,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ASNT NDT Level III (Basic + RT) focuses on advanced radiographic testing techniques and inspection program control. This study material prepares professionals to establish RT procedures, evaluate radiographic quality, and manage inspection compliance for critical components.",
         covers: [
@@ -126,7 +126,7 @@ export const courses: MainProduct[] = [
         review: 11240,
         rating: 4.2,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ASNT NDT Level III (Basic + VT) concentrates on advanced visual inspection planning, procedure control, and defect evaluation methods. This study material helps professionals develop VT techniques, assess critical defects, and maintain inspection quality across industrial applications.",
         covers: [
@@ -166,7 +166,7 @@ export const courses: MainProduct[] = [
         review: 17890,
         rating: 4,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "API 510 focuses on the inspection, maintenance, and safety of pressure vessels used in oil & gas and process industries. This study material helps inspectors understand vessel integrity, prevent failures, and work as per international API inspection standards.",
         covers: [
@@ -196,7 +196,7 @@ export const courses: MainProduct[] = [
         review: 15420,
         rating: 4.5,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "API 570 is dedicated to the inspection, maintenance, and integrity management of piping systems in refineries and process plants. This study material trains inspectors to detect piping damage, control corrosion, and ensure safe plant operations as per API codes.",
         covers: [
@@ -224,7 +224,7 @@ export const courses: MainProduct[] = [
         review: 12110,
         rating: 4.9,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "API 653 focuses on the inspection, repair, and safe operation of above-ground storage tanks used in petroleum and chemical industries. This study material helps inspectors evaluate tank condition, prevent leakage risks, and comply with international tank inspection standards.",
         covers: [
@@ -252,7 +252,7 @@ export const courses: MainProduct[] = [
         review: 10980,
         rating: 5,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "API 936 specializes in the inspection and quality control of refractory linings used in furnaces, heaters, and reactors. This study material trains inspectors to assess refractory installation, performance, and failure prevention in high-temperature environments.",
         covers: [
@@ -276,7 +276,7 @@ export const courses: MainProduct[] = [
         review: 16570,
         rating: 5,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "API 577 provides in-depth knowledge of welding processes, weld defects, and inspection techniques used in oil & gas industries. This study material helps inspectors understand welding quality control and ensure compliance with recognized welding standards.",
         covers: [
@@ -296,7 +296,7 @@ export const courses: MainProduct[] = [
         review: 14330,
         rating: 4.3,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "API 580 focuses on risk-based inspection planning to optimize plant safety and equipment reliability. This study material trains professionals to analyze failure risks, prioritize inspections, and reduce operational hazards using RBI methodology.",
         covers: [
@@ -319,7 +319,7 @@ export const courses: MainProduct[] = [
         review: 13260,
         rating: 3,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "API 571 explains common damage mechanisms affecting refinery and process equipment, including corrosion, cracking, and material degradation. This study material helps inspectors identify damage causes and apply prevention techniques effectively.",
         covers: [
@@ -342,7 +342,7 @@ export const courses: MainProduct[] = [
         review: 11890,
         rating: 4.5,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "API SIFE focuses on source inspection and quality control of fixed equipment during manufacturing and fabrication stages. This study material trains inspectors to verify material quality, welding standards, and equipment compliance before installation.",
         covers: [
@@ -376,7 +376,7 @@ export const courses: MainProduct[] = [
         review: 19450,
         rating: 3.8,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ARAMCO Welding CBT focuses on welding processes, quality control, and inspection requirements used in Saudi Aramco projects. This study material prepares professionals to understand welding standards, defect control, and compliance with Aramco welding specifications.",
         covers: [
@@ -401,7 +401,7 @@ export const courses: MainProduct[] = [
         review: 17120,
         rating: 4,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ARAMCO Piping CBT focuses on piping systems, material control, installation practices, and inspection requirements used in Aramco facilities. This study material trains professionals to ensure piping integrity, safety compliance, and quality execution.",
         covers: [
@@ -426,7 +426,7 @@ export const courses: MainProduct[] = [
         review: 13640,
         rating: 4.5,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ARAMCO Pipeline CBT focuses on pipeline construction, welding, inspection, and corrosion control used in oil & gas transmission systems. This study material prepares professionals to understand pipeline safety, quality standards, and inspection requirements.",
         covers: [
@@ -446,7 +446,7 @@ export const courses: MainProduct[] = [
         review: 15990,
         rating: 4.8,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ARAMCO Coating CBT focuses on surface preparation, protective coatings, and quality inspection practices used to prevent corrosion in industrial assets. This study material trains professionals to control coating quality and meet Aramco corrosion protection standards.",
         covers: [
@@ -469,7 +469,7 @@ export const courses: MainProduct[] = [
         review: 14780,
         rating: 4.3,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "ARAMCO Non-Metallic CBT focuses on inspection and application of non-metallic materials such as GRP, GRE, HDPE, and lined piping systems. This study material prepares professionals to understand installation, testing, and quality control of non-metallic systems in Aramco projects.",
         covers: [
@@ -500,7 +500,7 @@ export const courses: MainProduct[] = [
         review: 18360,
         rating: 5,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "CSWIP 3.1 focuses on welding inspection, quality control, and defect identification in fabrication and construction projects. This study material trains inspectors to ensure weld integrity, comply with welding standards, and maintain high safety and quality levels.",
         covers: [
@@ -530,7 +530,7 @@ export const courses: MainProduct[] = [
         review: 12970,
         rating: 4.8,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "CSWIP 3.2 is an advanced certification focused on supervising welding inspection activities, quality management, and technical decision-making. This study material prepares inspectors to manage inspection teams, interpret standards, and control welding quality at a senior level.",
         covers: [
@@ -732,7 +732,7 @@ export const courses: MainProduct[] = [
         review: 15860,
         rating: 4.3,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "AWS CWI certification focuses on professional welding inspection, quality control, and defect evaluation across fabrication and construction industries. This study material prepares inspectors to understand welding processes, inspection techniques, and code compliance as required by the American Welding Society.",
         covers: [
@@ -763,7 +763,7 @@ export const courses: MainProduct[] = [
         review: 13450,
         rating: 4.2,
         price: "1999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "The CWB Welding Supervisor certification focuses on supervising welding operations, ensuring workmanship quality, safety compliance, and adherence to welding standards used in industrial fabrication projects. This study material prepares professionals to manage welders, control welding procedures, and maintain quality systems as required by the Canadian Welding Bureau.",
         covers: [
@@ -794,7 +794,7 @@ export const courses: MainProduct[] = [
         review: 17630,
         rating: 4.5,
         price: "999",
-        guarantee: "85% Passing Guarantee Material",
+        guarantee: "99% Passing Guarantee Material",
         description:
           "BGAS G2 focuses on coating and painting inspection to protect structures from corrosion in industrial environments. This study material trains inspectors to evaluate surface preparation, coating application, and quality control to ensure long-term asset protection.",
         covers: [
