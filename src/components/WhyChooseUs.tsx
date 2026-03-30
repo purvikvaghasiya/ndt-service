@@ -1,25 +1,29 @@
-import { Users, Wrench, Award, Briefcase } from "lucide-react";
+import { Users, Wrench, Award, Briefcase, CheckCircle } from "lucide-react";
 
 const features = [
   {
     icon: Users,
-    title: "Experienced Trainers",
-    description: "Learn from industry veterans with 15+ years of practical field experience in NDT inspection.",
+    title: "Exam-Oriented Study Material",
+    description:
+      "Designed as per latest API, CSWIP, BGAS & NDT exam patterns with important concepts and MCQs.",
   },
   {
     icon: Wrench,
-    title: "Practical Training",
-    description: "Hands-on training with modern equipment including phased array, TOFD, and digital radiography systems.",
+    title: "Real Industrial Concepts",
+    description:
+      "Learn actual field-based concepts used in oil & gas, piping, welding, and inspection work.",
   },
   {
     icon: Award,
     title: "Certification Support",
-    description: "Complete assistance for ASNT SNT-TC-1A and ISO 9712 certification examinations.",
+    description:
+      "High-quality material focused on helping you clear certification exams in first attempt.",
   },
   {
     icon: Briefcase,
-    title: "Placement Assistance",
-    description: "Strong industry connections with leading oil & gas, aerospace, and manufacturing companies.",
+    title: "Lifetime Access & Updates",
+    description:
+      "Get lifetime access to study material with regular updates as per latest codes and standards.",
   },
 ];
 
@@ -35,7 +39,8 @@ const WhyChooseUs = () => {
             Why Choose Us?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We combine theoretical knowledge with extensive practical training to prepare you for real-world NDT challenges.
+            We combine theoretical knowledge with extensive practical training
+            to prepare you for real-world NDT challenges.
           </p>
         </div>
 
@@ -58,6 +63,18 @@ const WhyChooseUs = () => {
             </div>
           ))}
         </div>
+
+        <p className="text-center text-muted-foreground text-sm mt-10 flex items-center justify-center gap-4">
+          <span className="flex items-center gap-1.5">
+            <CheckCircle size={16} className="text-green-500" />
+            Trusted by 1000+ Students
+          </span>
+          <span>|</span>
+          <span className="flex items-center gap-1.5">
+            <CheckCircle size={16} className="text-green-500" />
+            Industry-Based Learning Approach
+          </span>
+        </p>
       </div>
     </section>
   );

@@ -16,9 +16,11 @@ const Footer = () => {
                 className="h-12 lg:h-12 w-auto"
               />
             </Link>
+            <h3>API CSWIP BGAS NDT SERVICE</h3>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Leading NDT training institute providing ISO-certified courses
-              with industry-oriented practical training.
+              Providing professional study material for API, CSWIP, BGAS, NDT,
+              QA/QC & ARAMCO certifications. Focused on exam-oriented learning,
+              real industrial concepts, and first-attempt success.
             </p>
           </div>
 
@@ -48,16 +50,22 @@ const Footer = () => {
             <h4 className="font-display font-bold text-lg mb-4">Our Courses</h4>
             <ul className="space-y-2">
               {[
-                "API Material",
-                "CSWIP & BGAS Material",
-                "ASNT level III Material",
-                "ARAMCO CBT Material",
-                "QA/QC Material",
+                {
+                  label: "API Certifications (510, 570, 653 etc..)",
+                  id: "product-2",
+                },
+                { label: "CSWIP & BGAS Inspection", id: "product-4" },
+                { label: "ASNT NDT Level II & III", id: "product-1" },
+                { label: "ARAMCO CBT Programs", id: "product-3" },
+                { label: "QA/QC & Welding Courses", id: "product-5" },
               ].map((course) => (
-                <li key={course}>
-                  <span className="text-primary-foreground/80 text-sm">
-                    {course}
-                  </span>
+                <li key={course.id}>
+                  <Link
+                    to={`/category/${course.id}`}
+                    className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                  >
+                    {course.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,7 +108,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center">
           <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} NDT Training Institute. All rights
+            © {new Date().getFullYear()} API CSWIP BGAS NDT SERVICE. All rights
             reserved.
           </p>
         </div>

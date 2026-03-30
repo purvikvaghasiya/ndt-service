@@ -7,12 +7,12 @@ const ContactCTA = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="font-display text-3xl lg:text-4xl text-primary-foreground mb-4">
-            Ready to Start Your NDT Career?
+            Crack API, CSWIP, BGAS & NDT Exams with Confidence
           </h2>
           <p className="text-primary-foreground/80 mb-8 text-lg">
-            Connect with us today and take the first step towards becoming a
-            certified NDT professional. Our counselors are available to guide
-            you.
+            Get access to exam-focused study material designed for real
+            industrial concepts. Achieve certification faster with 85% passing
+            support and expert guidance.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

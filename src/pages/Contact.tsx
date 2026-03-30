@@ -16,8 +16,9 @@ const Contact = () => {
               Get in Touch With Us
             </h1>
             <p className="text-primary-foreground/80 text-lg">
-              Have questions about our courses? We're here to help you choose
-              the right path for your career.
+              Have questions about API, CSWIP, BGAS or NDT study material?
+              Contact us now to get complete details, pricing, and instant
+              support for your certification preparation.
             </p>
           </div>
         </div>

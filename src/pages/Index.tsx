@@ -16,14 +16,15 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <span className="inline-block bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
-              Our Programs
+              Our Course
             </span>
             <h2 className="font-display text-3xl lg:text-4xl text-foreground mb-4">
-              NDT Certification Courses
+              Professional Certification Study Material
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive training programs designed to meet international
-              standards and industry requirements.
+              High-quality study material for API, CSWIP, BGAS & NDT
+              certifications with real industrial concepts and exam-oriented
+              preparation.
             </p>
           </div>
 
