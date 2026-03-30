@@ -216,10 +216,58 @@ const ProductDetail = () => {
                 </button>
               </div> */}
 
-              {/* Description */}
-              <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                {product.description}
-              </p>
+              {/* Guarantee Badge */}
+              {product.guarantee && (
+                <div className="flex items-center gap-2 text-sm font-semibold text-accent">
+                  <span>🎯</span>
+                  <span>{product.guarantee}</span>
+                </div>
+              )}
+
+              {/* Product Description */}
+              <div className="space-y-1">
+                <h4 className="font-semibold text-foreground flex items-center gap-2">
+                  <span>📖</span> Product Description
+                </h4>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {product.description}
+                </p>
+              </div>
+
+              {/* What This Study Material Covers */}
+              {product.covers && product.covers.length > 0 && (
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <span>🎯</span>{" "}
+                    {product.coversTitle || "What This Study Material Covers"}
+                  </h4>
+                  <ul className="space-y-1">
+                    {product.covers.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-muted-foreground text-sm"
+                      >
+                        <span className="text-accent flex-shrink-0 mt-0.5">
+                          ✔
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Result-Oriented Learning */}
+              {product.resultLearning && (
+                <div className="space-y-1">
+                  <h4 className="font-semibold text-foreground flex items-center gap-2">
+                    <span>🔥</span> Result-Oriented Learning
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {product.resultLearning}
+                  </p>
+                </div>
+              )}
 
               {/* Product ID */}
               <div className="text-sm">
@@ -232,10 +280,21 @@ const ProductDetail = () => {
               </div>
 
               {/* Price Section */}
-              <div className="flex items-center gap-2 py-4 border-y">
-                <IndianRupee size={22} className="text-accent" />
-                <span className="text-3xl lg:text-4xl font-bold text-foreground">
-                  {product.price}
+              <div className="flex items-center gap-3 py-4 border-y flex-wrap">
+                <div className="flex items-center gap-1">
+                  <IndianRupee size={22} className="text-accent" />
+                  <span className="text-3xl lg:text-4xl font-bold text-foreground">
+                    {product.price}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1 text-muted-foreground">
+                  <IndianRupee size={16} />
+                  <span className="text-xl line-through">
+                    {Math.round(Number(product.price) * 1.2)}
+                  </span>
+                </div>
+                <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">
+                  20% OFF
                 </span>
               </div>
 

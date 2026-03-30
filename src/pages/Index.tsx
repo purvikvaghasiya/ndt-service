@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import HeroCarousel from "@/components/HeroCarousel";
-import CourseCard from "@/components/CourseCard";
+import MainProductCard from "@/components/MainProductCard";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ContactCTA from "@/components/ContactCTA";
 import { courses } from "@/data/courses";
@@ -28,11 +28,9 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {courses.map((main) =>
-              main.subProducts.map((sub) => (
-                <CourseCard key={sub.id} product={sub} category={main.title} />
-              )),
-            )}
+            {courses.map((main) => (
+              <MainProductCard key={main.id} product={main} />
+            ))}
           </div>
         </div>
       </section>
