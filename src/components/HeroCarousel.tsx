@@ -4,25 +4,17 @@ import { Link } from "react-router-dom";
 // import hero1 from "@/assets/hero-1.jpeg";
 // import hero2 from "@/assets/hero-2.jpeg";
 import heroNew1 from "@/assets/hero-new-1.jpg";
+import heroNew1Mobile from "@/assets/hero-new-1-mobile.jpeg";
 import heroNew2 from "@/assets/hero-new-2.jpg";
 import heroNew3 from "@/assets/hero-new-3.jpg";
 
 const slides = [
   {
     image: heroNew1,
+    mobileImage: heroNew1Mobile,
     title: "Professional NDT Training Institute",
     subtitle: "ISO Certified | Industry Oriented Courses",
   },
-  // {
-  //   image: heroNew1,
-  //   title: "State-of-the-Art Facilities",
-  //   subtitle: "Advanced Equipment | Modern Labs",
-  // },
-  // {
-  //   image: heroNew1,
-  //   title: "State-of-the-Art Facilities",
-  //   subtitle: "Advanced Equipment | Modern Labs",
-  // },
 ];
 
 const HeroCarousel = () => {
@@ -51,10 +43,17 @@ const HeroCarousel = () => {
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
+          {/* Mobile image */}
+          <img
+            src={slide.mobileImage ?? slide.image}
+            alt={slide.title}
+            className="block md:hidden w-full h-full object-fill"
+          />
+          {/* Desktop image */}
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-fill"
+            className="hidden md:block w-full h-full object-fill"
           />
           {/* <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" /> */}
         </div>
